@@ -11,7 +11,7 @@ All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
 ### Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="33%">Good</th><th width="33%">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 class Listener
@@ -43,7 +43,7 @@ In unit tests, when writing a mock, the class name is usually postfixed with **M
 
 ### Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="33%">Good</th><th width="33%">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 class CanTransceiver;
