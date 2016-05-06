@@ -158,13 +158,9 @@ public:
 
 </pre></td><td><pre lang="cpp">
 
-bool sleepModeActive();
-
 class CanTransceiver
 {
 public:
-    CanTransceiver();
-
     void setBusId(BusId id);
 
     BusId getBusId() const;
