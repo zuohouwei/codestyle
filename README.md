@@ -10,49 +10,52 @@ All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 :-1: Tabs
 
 ### Example
-
 <table>
-<tr><th width="30%">Good</th><th width="30%">Bad</th></tr>
-<tr>
-<td>
-<pre lang="cpp">
+<tr><th>Good</th><th>Bad</th></tr>
+<tr><td><pre lang="cpp">
+
 class Listener
 :   ::esrlabs::estd::forward_list_node<Listener>
 {
 public:
     void doWork();
 };
-</pre>
-</td>
-<td>
-<pre lang="cpp">
+
+</pre></td><td><pre lang="cpp">
+
 class Listener
 : ::esrlabs::estd::forward_list_node<Listener>
 {
 public:
   void doWork();
 };
-</pre>
-</td>
-</tr>
+
+</pre></td></tr>
 </table>
 
-### Example, Good
-```cpp
-class Listener
-:   ::esrlabs::estd::forward_list_node<Listener>
-{
-public:
-    void doWork();
-};
-```
+## Class names
+Class names are written in camel case starting with a capital letter. Also abbreviations like CAN are camel case: Can. _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
 
-### Example, Bad
-```cpp
-class Listener
-: ::esrlabs::estd::forward_list_node<Listener>
-{
-public:
-  void doWork();
-};
-```
+In unit tests, when writing a mock, the class name is usually postfixed with **Mock**.
+
+### Summary
+:+1: Class names are CamelCase
+
+### Example
+<table>
+<tr><th>Good</th><th>Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+class CanTransceiver;
+class CanTransceiverMock;
+class FilteredLinFrameListerner;
+class ITransportMessageProvider; //interface
+
+</pre></td><td><pre lang="cpp">
+
+class CANTransceiver;
+class filteredLINFrameListener;
+class AbstractDiagJob; //should be DiagJob
+
+</pre></td></tr>
+</table>
