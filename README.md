@@ -9,6 +9,34 @@ All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
 :-1: Tabs
 
+### Example
+
+<table>
+<tr><th width="30%">Good</th><th width="30%">Bad</th></tr>
+<tr>
+<td>
+<pre lang="cpp">
+class Listener
+:   ::esrlabs::estd::forward_list_node<Listener>
+{
+public:
+    void doWork();
+};
+</pre>
+</td>
+<td>
+<pre lang="cpp">
+class Listener
+: ::esrlabs::estd::forward_list_node<Listener>
+{
+public:
+  void doWork();
+};
+</pre>
+</td>
+</tr>
+</table>
+
 ### Example, Good
 ```cpp
 class Listener
