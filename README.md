@@ -93,7 +93,8 @@ class CanTransceiver
 public:
     ErrorCode send(const CanFrame& frame);
 
-    static bool addGlobalListener(ICanFrameListener& listener);
+    static bool addGlobalListener(
+        ICanFrameListener& listener);
 };
 
 </pre></td><td><pre lang="cpp">
@@ -105,7 +106,8 @@ class CanTransceiver
 public:
     ErrorCode SendFrame(const CanFrame& frame);
 
-    static bool AddGlobalListener(ICanFrameListener& listener);
+    static bool AddGlobalListener(
+        ICanFrameListener& listener);
 };
 
 </pre></td></tr>
