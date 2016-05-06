@@ -4,6 +4,7 @@ Code style is a matter of personal taste and discussions about it tend to become
 ##### Table of Contents  
 * [Tabs vs. Spaces](#tabs-vs-spaces)
 * [Class Names](#class-names)  
+* [Function Names](#function-names)  
 
 
 # Tabs vs. Spaces
@@ -38,6 +39,7 @@ public:
 </pre></td></tr>
 </table>
 
+
 # Class names
 Class names are written in camel case starting with a capital letter. Also abbreviations like CAN are camel case: Can. _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
 
@@ -61,6 +63,50 @@ class ITransportMessageProvider; //interface
 class CANTransceiver;
 class filteredLINFrameListener;
 class AbstractDiagJob; //should be DiagJob
+
+</pre></td></tr>
+</table>
+
+
+# Function names
+Function names are written in camel case starting with a lower case letter.
+
+Try to be precise without repeating yourself. For example if you provide a
+function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
+The signature tells the user that this function sends a `CanFrame`.
+
+
+## Summary
+:+1: Function names are camelCase
+
+:+1: Consider signature part of name
+
+## Example
+<table>
+<tr><th width="33%">Good</th><th width="33%">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+void shutdownEcu();
+
+class CanTransceiver
+{
+public:
+    ErrorCode send(const CanFrame& frame);
+
+    static bool addGlobalListener(ICanFrameListener& listener);
+};
+
+</pre></td><td><pre lang="cpp">
+
+void ShutdownEcu();
+
+class CanTransceiver
+{
+public:
+    ErrorCode SendFrame(const CanFrame& frame);
+
+    static bool AddGlobalListener(ICanFrameListener& listener);
+};
 
 </pre></td></tr>
 </table>
