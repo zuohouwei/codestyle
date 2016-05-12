@@ -12,7 +12,7 @@ All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
 ## Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 class Listener
@@ -47,7 +47,7 @@ In unit tests, when writing a mock, the class name is usually postfixed with **M
 
 ## Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 class CanTransceiver;
@@ -77,7 +77,7 @@ The signature tells the user that this function sends a `CanFrame`.
 
 ## Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 void shutdownEcu();
@@ -114,7 +114,7 @@ Boolean member functions tend to be `const`.
 
 ### Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 bool isEcuInSleepMode();
@@ -145,7 +145,7 @@ functions, instead use `const` attribute style functions.
 
 ### Example
 <table>
-<tr><th width="50%">Good</th><th width="50%">Bad</th></tr>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
 class CanTransceiver
