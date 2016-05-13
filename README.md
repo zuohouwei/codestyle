@@ -5,6 +5,7 @@ Code style is a matter of personal taste and discussions about it tend to become
 * [Tabs vs. Spaces](#tabs-vs-spaces)
 * [Class Names](#class-names)  
 * [Function Names](#function-names)  
+* [Variable Names](#variable-names)  
 
 
 # Tabs vs. Spaces
@@ -177,3 +178,125 @@ public:
 :+1: Consider signature part of name
 
 :+1: Getters should use attribute style
+
+# Variable Names
+Variable names are written in camel case starting with a lower case letter.
+
+We do *not* use [Hungarian Notation](https://en.wikipedia.org/wiki/Hungarian_notation),
+although you sometimes might find the prefix **p** for pointers or **s** for
+static member variables.
+
+All variable names like global variable names, local variable name, function
+parameter names are treated similarly. The exception are member variable
+names.
+
+In general, spend time finding good variable names. Don't try to abbreviate
+too much, also don't use patterns like stripping vowels from names to make
+them shorter. Also `a`, `b` or `z` are normally not good choices ;-).
+
+Reading your code should be pleasant and joyful to others.
+
+## Member Variable Names
+Member variables of a `class`, `struct` or `union` shall be prefixed. You will
+find the prefix **f** a lot but also **m** or **_**. Don't invent any new
+prefixes, postfixes are forbidden. Also, be consistent within your module, never
+mix styles.
+
+If a struct is used as a *POD*, i.e. all members are public and it does not
+provide and functions, you can omit the prefix.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+class CanTransceiver
+{
+    ::estd::forward_list<ICanFrameListener> fListeners;
+};
+
+struct Result
+{
+    ::bsp::ErrorCode status;
+    uint16_t value;
+};
+
+</pre></td><td><pre lang="cpp">
+
+class CanTransceiver
+{
+    ::estd::forward_list<ICanFrameListener> listeners;
+};
+
+struct Result
+{
+    ::bsp::ErrorCode Status;
+    uint16_t value_;
+};
+
+</pre></td></tr>
+</table>
+
+## Global, Local, Parameter Names
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+void initLifecycle(
+    ::lifecycle::Mode mode,
+    ::lifecycle::Manager* pManager)
+{
+    ::lifecycle::Manager::TransitionResult result =
+        ::lifecycle::Manager::TransitionResult::NONE;
+}
+
+</pre></td><td><pre lang="cpp">
+
+void initLifecycle(
+    ::lifecycle::Mode Md,
+    ::lifecycle::Manager* ptr_mgr)
+{
+    ::lifecycle::Manager::TransitionResult r =
+        ::lifecycle::Manager::TransitionResult::NONE;
+}
+</pre></td></tr>
+</table>
+
+## Boolean Variables
+Boolean variables should start with _is_ or _has_.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+void shutdown(Connection& connection)
+{
+    bool isSuccessfullyTerminated =
+        connection.terminate();
+}
+
+</pre></td><td><pre lang="cpp">
+
+void shutdown(Connection& connection)
+{
+    bool terminated = connection.terminate();
+}
+
+</pre></td></tr>
+</table>
+
+## Summary
+:+1: Variable names are camelCase
+
+:+1: Boolean variables start with _is_ or _has_
+
+:+1: Member variables are prefixed with *f*, *m* or *_*
+
+# Constants
+
+# File Names
+
+# Include Guards
