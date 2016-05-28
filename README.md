@@ -7,6 +7,7 @@ Code style is a matter of personal taste and discussions about it tend to become
 * [Function Names](#function-names)  
 * [Variable Names](#variable-names)  
 * [Constants](#constants)
+* [Include Guards](#include-guards)
 
 
 # Tabs vs. Spaces
@@ -388,7 +389,7 @@ would cause compilation errors. There are two forms of allowed include guards:
 #endif
 </pre></td></tr>
 </table>
-
+**
 ## Summary
 :+1: Include guard is all UPPER_CASE file name + path
 
