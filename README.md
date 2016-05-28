@@ -358,8 +358,7 @@ would cause compilation errors. There are two forms of allowed include guards:
 ## Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
-<tr><td>
-```cpp
+<tr><td><pre lang="cpp">
 //File: include/can/CanTransceiver.h
 
 #ifndef CAN_CANTRANSCEIVER_H_
@@ -373,9 +372,7 @@ would cause compilation errors. There are two forms of allowed include guards:
 #define HE793FCD8_FC04_45D3_A438_533341BBA7B1
 
 #endif /* HE793FCD8_FC04_45D3_A438_533341BBA7B1 */
-```
-</td><td>
-```cpp
+</pre></td><td><pre lang="cpp">
 //File: include/can/CanTransceiver.h
 
 #ifndef CANTRANSCEIVER_H_
@@ -389,10 +386,10 @@ would cause compilation errors. There are two forms of allowed include guards:
 #define HE793FCD8_FC04_45D3_A438_533341BBA7B1
 
 #endif
-```
-</td></tr>
+</pre></td></tr>
 </table>
 
 ## Summary
 :+1: Include guard is all UPPER_CASE file name + path
+
 :+1: Include guard is unique identifier
