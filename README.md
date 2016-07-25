@@ -38,9 +38,9 @@ public:
 </table>
 
 ## Summary
-:+1: Indentation 4 spaces
+:white_check_mark: Indentation 4 spaces
+:no_entry: Tabs
 
-:-1: Tabs
 
 
 # Class Names
@@ -68,7 +68,7 @@ class AbstractDiagJob; //should be DiagJob
 </table>
 
 ## Summary
-:+1: Class names are CamelCase
+:white_check_mark: Class names are CamelCase
 
 
 # Function Names
@@ -173,13 +173,13 @@ public:
 </table>
 
 ## Summary
-:+1: Function names are camelCase
+:white_check_mark: Function names are camelCase
 
-:+1: Boolean functions start with _is_ or _has_
+:white_check_mark: Boolean functions start with _is_ or _has_
 
-:+1: Consider signature part of name
+:white_check_mark: Consider signature part of name
 
-:+1: Getters should use attribute style
+:white_check_mark: Getters should use attribute style
 
 # Variable Names
 Variable names are written in camelCase starting with a lower case letter.
@@ -291,11 +291,11 @@ void shutdown(Connection& connection)
 </table>
 
 ## Summary
-:+1: Variable names are camelCase
+:white_check_mark: Variable names are camelCase
 
-:+1: Boolean variables start with _is_ or _has_
+:white_check_mark: Boolean variables start with _is_ or _has_
 
-:+1: Member variables are prefixed with *f*, *m* or *_*
+:white_check_mark: Member variables are prefixed with *f*, *m* or *_*
 
 # Constants
 Constants including `enum` values are written all UPPER_CASE with underscore
@@ -338,7 +338,7 @@ public:
 </table>
 
 ## Summary
-:+1: Constants are all UPPER_CASE
+:white_check_mark: Constants are all UPPER_CASE
 
 
 # File Names
@@ -391,6 +391,6 @@ would cause compilation errors. There are two forms of allowed include guards:
 </table>
 **
 ## Summary
-:+1: Include guard is all UPPER_CASE file name + path
+:white_check_mark: Include guard is all UPPER_CASE file name + path
 
-:+1: Include guard is unique identifier
+:white_check_mark: Include guard is unique identifier
