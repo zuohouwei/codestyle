@@ -395,3 +395,45 @@ would cause compilation errors. There are two forms of allowed include guards:
 :white_check_mark: Include guard is all UPPER_CASE file name + path
 
 :white_check_mark: Include guard is unique identifier
+
+# Includes
+The style used to specify an include shall reflect the locality of the included header file.
+
+1. All includes which are part of the module the including header file is part of shall use quotes "" 
+2. All includes which are not part of the module the including header (exterrnal includes) file is part of shall use angle brackets <>
+
+## Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+//File: include/logger/BufferedLoggerOutput.h
+
+#include <estd/forward_list.h>
+#include <util/logger/IComponentMapping.h>
+#include <util/logger/ILoggerOutput.h>
+#include "logger/IEntryOutput.h"
+#include "logger/ILoggerListener.h"
+#include "logger/ILoggerTime.h"
+#include "logger/EntryBuffer.h"
+#include "logger/EntrySerializer.h"
+
+</pre></td><td><pre lang="cpp">
+
+//File: include/logger/BufferedLoggerOutput.h
+
+#include "estd/forward_list.h"
+#include "util/logger/IComponentMapping.h"
+#include "util/logger/ILoggerOutput.h"
+#include "logger/IEntryOutput.h"
+#include "logger/ILoggerListener.h"
+#include "logger/ILoggerTime.h"
+#include "logger/EntryBuffer.h"
+#include "logger/EntrySerializer.h"
+
+</pre></td></tr>
+</table>
+**
+## Summary
+:white_check_mark: for module internal includes use quotes ""
+:white_check_mark: for module external includes use angle brackets <>
