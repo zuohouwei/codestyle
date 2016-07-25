@@ -436,4 +436,5 @@ The style used to specify an include shall reflect the locality of the included 
 **
 ## Summary
 :white_check_mark: for module internal includes use quotes ""
+
 :white_check_mark: for module external includes use angle brackets <>
