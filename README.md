@@ -409,9 +409,9 @@ The style used to specify an include shall reflect the locality of the included 
 
 //File: include/logger/BufferedLoggerOutput.h
 
-#include \<estd/forward_list.h>
-#include \<util/logger/IComponentMapping.h>
-#include \<util/logger/ILoggerOutput.h>
+#include `<estd/forward_list.h>`
+#include `<util/logger/IComponentMapping.h>`
+#include `<util/logger/ILoggerOutput.h>`
 #include "logger/IEntryOutput.h"
 #include "logger/ILoggerListener.h"
 #include "logger/ILoggerTime.h"
