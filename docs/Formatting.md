@@ -33,8 +33,29 @@ public:
 
 :no_entry: Tabs
 
-## No trailing whitespaces
+## Trailing whitespaces
 There must not be any trailing whitespace. It is highly recommended to adjust your IDE to highlight trailing whitespaces.
+
+## Line breaks
+If a list of parameters to a function becomes to long to fit into one line, each parameter goes into a separate line.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+void MyClass::functionWithManyParams(
+        int parameter1,
+        int parameter2,
+        int parameter3,
+        int parameter4);
+
+</pre></td><td><pre lang="cpp">
+
+void MyClass::functionWithManyParams(int parameter1, int parameter2, int parameter3, int parameter4);
+
+</pre></td></tr>
+</table>
 
 # Line Wraping
 
