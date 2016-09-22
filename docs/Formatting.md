@@ -194,4 +194,40 @@ do
 </pre></td></tr>
 </table>
 
+### Switch-Case
+
+Curly brackets go into new lines. Every switch statement must have a default branch.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+switch (var)
+{
+    case 1:
+        //code for case 1
+        break;
+    case 2:
+        //code for case 2
+        break;
+    default:
+        //default code
+        break;
+}
+
+</pre></td><td><pre lang="cpp">
+
+switch (var) {
+case 1:
+    //code for case 1
+    break;
+case 2:
+    //code for case 2
+    break;
+}
+
+</pre></td></tr>
+</table>
+
 ## Comments
