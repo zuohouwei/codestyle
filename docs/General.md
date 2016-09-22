@@ -120,7 +120,7 @@ class Timeout
     static const uint8_t MAX_TIMEOUT_IN_MS = 128U; 
     
     ...
-}
+};
 
 </pre></td><td><pre lang="cpp">
 
@@ -131,11 +131,11 @@ class Timeout
     static const uint8_t MAX_TIMEOUT = 128U; // unit is miliseconds
     
     ...
-}
+};
 
 </pre></td></tr>
 </table>
 **
 ### Summary
-:white_check_mark: try to encode all important information in the source code itself.
+:white_check_mark: Try to encode all important information in the source code itself.
 
