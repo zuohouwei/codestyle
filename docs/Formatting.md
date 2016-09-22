@@ -33,6 +33,8 @@ public:
 
 :no_entry: Tabs
 
+## No trailing whitespaces
+There must not be any trailing whitespace. It is highly recommended to adjust your IDE to highlight trailing whitespaces.
 
 # Line Wraping
 
