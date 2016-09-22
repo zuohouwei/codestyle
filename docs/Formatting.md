@@ -130,13 +130,12 @@ else
 
 </pre></td><td><pre lang="cpp">
 
-if (condition)
+if (condition) {
     //do something
-else if (condition2) //do something else
-else
-{
-    //default case
 }
+else if (condition2)
+    //do something else
+else {//default case}
 
 </pre></td></tr>
 </table>
