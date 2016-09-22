@@ -5,12 +5,14 @@ Abreviation shold be written in lower-case with the capital first letter
 <tr><td><pre lang="cpp">
 
 exportHtmlSource();
-InitializeUsbDevice();
+
+initUsbDevice();
 
 </pre></td><td><pre lang="cpp">
 
 exportHTMLSource();
-initializeUSBDevice();
+
+initUSBDevice();
 
 </pre></td></tr>
 </table>
@@ -187,7 +189,7 @@ be written in 'CamelCase'
 <tr><td><pre lang="cpp">
 
 template <size_t PAYLOAD_SIZE>
-struct CanFrame
+class CanFrame
 {
     ...
 }
@@ -195,7 +197,14 @@ struct CanFrame
 typedef CanFrame<64> CanFdFrame;
 
 </pre></td><td><pre lang="cpp">
-typedef CanFrame<64> CANFdFrame;
+
+template <size_t PAYLOAD_SIZE>
+class CANFrame
+{
+    ...
+}
+
+typedef CANFrame<64> CANFdFrame;
 </pre></td></tr>
 </table>
 
@@ -240,7 +249,8 @@ private:
 
 </pre></td></tr>
 </table>
-:point_up:
+
+:warning:
 
 > From the 2003 C++ Standard:
 
@@ -248,8 +258,9 @@ private:
 
 > Certain sets of names and function signatures are always reserved to the implementation:
 
->Each name that contains a double underscore (_ _) or begins with an underscore followed by an uppercase letter (2.11) is reserved to the implementation for any use.
-Each name that begins with an underscore is reserved to the implementation for use as a name in the global namespace.165
-165) Such names are also reserved in namespace ::std (17.4.3.1).
+> * Each name that contains a double underscore (_ _) or begins with an underscore followed by an uppercase letter (2.11) is reserved to the implementation for any use.
+
+> * Each name that begins with an underscore is reserved to the implementation for use as a name in the global namespace.
+> Such names are also reserved in namespace ::std (17.4.3.1).
 
 
