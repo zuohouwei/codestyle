@@ -2,11 +2,13 @@
 Code style is a matter of personal taste and discussions about it tend to become emotional. In order to prevent religious wars, we define an E.S.R.Labs set of style rules.
 
 ##### Table of Contents  
-* [Tabs vs. Spaces](#tabs-vs-spaces)
-* [Class Names](#class-names)  
-* [Function Names](#function-names)  
-* [Variable Names](#variable-names)  
-* [Constants](#constants)
+* [Tabs vs. Spaces](#TabsVsSpaces)
+* [Files](Files.md)
+* [Functions](#Functions)  
+* [Class Style](#ClassStyle)  
+* [Namespaces](#Namespaces)  
+* [Variables](#Variables)  
+* [Constants](#Constants)
 * [Include Guards](#include-guards)
 
 
