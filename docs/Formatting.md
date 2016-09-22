@@ -39,7 +39,7 @@ There must not be any trailing whitespace. It is highly recommended to adjust yo
 ## Line breaks
 If a list of parameters to a function becomes to long to fit into one line, each parameter goes into a separate line.
 
-### Example
+### Examples
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -54,6 +54,37 @@ void MyClass::functionWithManyParams(
 </pre></td><td><pre lang="cpp">
 
 void MyClass::functionWithManyParams(int parameter1, int parameter2, int parameter3, int parameter4);
+
+</pre></td></tr>
+</table>
+
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+PortSync::sendAnnounceMessage()
+{
+    fAnnounceMessage.setSequenceId(fAnnounceSequenceId);
+    fAnnounceMessage.setLogMessageInterval(fAnnounceLogMessageInterval);
+    fRawEthernetSend(
+            slice<uint8_t>::from_pointer(
+                &(fAnnounceBuffer[0]),
+                PtpMessage::PTP_ANNOUNCE_MESSAGE_LENGTH
+            ),
+            DataSentCallback()
+    );
+    ++fAnnounceSequenceId;
+}
+
+</pre></td><td><pre lang="cpp">
+
+PortSync::sendAnnounceMessage()
+{
+    fAnnounceMessage.setSequenceId(fAnnounceSequenceId);
+    fAnnounceMessage.setLogMessageInterval(fAnnounceLogMessageInterval);
+    fRawEthernetSend(slice<uint8_t>::from_pointer(&(fAnnounceBuffer[0]), PtpMessage::PTP_ANNOUNCE_MESSAGE_LENGTH), DataSentCallback());
+    ++fAnnounceSequenceId;
+}
 
 </pre></td></tr>
 </table>
