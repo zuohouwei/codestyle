@@ -140,4 +140,26 @@ else {//default case}
 </pre></td></tr>
 </table>
 
+### For-Loops
+Curly brackets go into new lines.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+for (int i = 1; i < 20; ++i)
+{
+    //do something
+}
+
+</pre></td><td><pre lang="cpp">
+
+for (int i = 1; i < 20; ++i) {
+    //do something
+}
+
+</pre></td></tr>
+</table>
+
 ## Comments
