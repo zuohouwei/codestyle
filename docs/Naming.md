@@ -1,5 +1,24 @@
+## Abreviation Names
+Abreviation shold be written in lower-case with the capital first letter
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+exportHtmlSource();
+InitializeUsbDevice();
+
+</pre></td><td><pre lang="cpp">
+
+exportHTMLSource();
+initializeUSBDevice();
+
+</pre></td></tr>
+</table>
+
+
 ## Function Names
 Function names are written in 'camelCase' starting with a lower case letter.
+Function name should be a verb, it should refleck an action.
 
 Try to be precise without repeating yourself. For example if you provide a
 function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
@@ -179,3 +198,58 @@ typedef CanFrame<64> CanFdFrame;
 typedef CanFrame<64> CANFdFrame;
 </pre></td></tr>
 </table>
+
+# Class
+
+## Private Members
+Should be with underscore prefix
+Private members are important to keep in mind and to distignuish from local variables,
+so underscore prefix make it possible to see it better and to operate more carefully
+with them.
+
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+class Box
+{
+public:
+
+	Box(int depth)
+	: _depth(depth)
+	{ }
+
+private:
+
+	int _depth;
+}
+</pre></td><td><pre lang="cpp">
+
+class Box
+{
+public:
+
+	Box(int depth)
+	: fDepth(depth)
+	{ }
+
+private:
+
+	int fDepth;
+}
+
+</pre></td></tr>
+</table>
+:point_up:
+
+> From the 2003 C++ Standard:
+
+> 17.4.3.1.2 Global names [lib.global.names]
+
+> Certain sets of names and function signatures are always reserved to the implementation:
+
+>Each name that contains a double underscore (_ _) or begins with an underscore followed by an uppercase letter (2.11) is reserved to the implementation for any use.
+Each name that begins with an underscore is reserved to the implementation for use as a name in the global namespace.165
+165) Such names are also reserved in namespace ::std (17.4.3.1).
+
+
