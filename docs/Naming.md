@@ -117,7 +117,6 @@ public:
 
 * All the variables should be readable and make sence. 
 * If it's possible to not create new abreviation, then don't.
-* Pointers should have prefix *p*
 
 ### Example
 <table>
@@ -127,10 +126,10 @@ public:
 Manager::TransitionResult 
 connect(
     Database database,
-    Manager* pManager
+    Manager* manager
 )
 {
-    database.add(pManager);
+    database.add(manager);
     Manager::TransitionResult result =
         Manager::TransitionResult::NONE;
     return result;
