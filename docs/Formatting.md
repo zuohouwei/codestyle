@@ -103,7 +103,7 @@ PortSync::sendAnnounceMessage()
 Each line of text in your code should be at most 120 characters long.
 
 ### Logic
-80 characters was used by old retarted people.
+At most 80 characters was used by old retarted people.
 
 ## Control Statements
 
