@@ -1,5 +1,15 @@
-# Content
-[Class-naming](#class)
+[Main Page](README.md)
+
+# Table of contents
+* [Abreviation Names](#abreviation-names)
+* [Function Names](#function-names)
+* [Boolean Functions](#boolean-functions)
+* [Global, Local, Parameter Names](#global-local-parameter-names)
+ * [Types](#type-names)
+ * [Constants](#constants)
+ * [Variable Names](#variable-names)
+* [Class-naming](#class)
+ * [Private members](#private-members)
 
 
 ## Abreviation Names
@@ -30,7 +40,6 @@ Try to be precise without repeating yourself. For example if you provide a
 function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
 The signature tells the user that this function sends a `CanFrame`.
 
-### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -62,12 +71,11 @@ public:
 </pre></td></tr>
 </table>
 
-## #Boolean Functions
+## Boolean Functions
 If a function returns a boolean value which is not intended to signal success
 or failure of the function call, the function should start with _is_ or _has_.
 Boolean member functions tend to be `const`.
 
-### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -93,55 +101,7 @@ public:
 </pre></td></tr>
 </table>
 
-## Variable Names
-Variable names are written in camelCase starting with a lower case letter.
-
-We do *not* use [Hungarian Notation](https://en.wikipedia.org/wiki/Hungarian_notation),
-although you sometimes might find the prefix **p** for pointers or **s** for
-static member variables.
-
-All variable names like global variable names, local variable name, function
-parameter names are treated similarly. The exception are member variable
-names.
-
-In general, spend time finding good variable names. Don't try to abbreviate
-too much, also don't use patterns like stripping vowels from names to make
-them shorter. Also `a`, `b` or `z` are normally not good choices ;-).
-
-Reading your code should be pleasant and joyful to others.
-
-### Boolean Variables
-Boolean variables should start with 'is' or 'has'.
-
-#### Example
-<table>
-<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
-<tr><td><pre lang="cpp">
-
-void shutdown(Connection& connection)
-{
-    bool isSuccessfullyTerminated =
-        connection.terminate();
-}
-
-</pre></td><td><pre lang="cpp">
-
-void shutdown(Connection& connection)
-{
-    bool terminated = connection.terminate();
-}
-
-</pre></td></tr>
-</table>
-
-## Summary
-:white_check_mark: Variable names are camelCase
-
-:white_check_mark: Boolean variables start with _is_ or _has_
-
-:white_check_mark: Member variables are prefixed with *f*, *m* or *_*
-
-## Global, Local, Parameter Names
+# Global, Local, Parameter Names
 
 ### Example
 <table>
@@ -149,18 +109,20 @@ void shutdown(Connection& connection)
 <tr><td><pre lang="cpp">
 
 void initLifecycle(
-    ::lifecycle::Mode mode,
-    ::lifecycle::Manager* pManager)
+    Mode mode,
+    Manager* pManager
+)
 {
-    ::lifecycle::Manager::TransitionResult result =
-        ::lifecycle::Manager::TransitionResult::NONE;
+    Manager::TransitionResult result =
+        Manager::TransitionResult::NONE;
 }
 
 </pre></td><td><pre lang="cpp">
 
 void initLifecycle(
-    ::lifecycle::Mode Md,
-    ::lifecycle::Manager* ptr_mgr)
+    Mode Md,
+    Manager* ptr_mgr
+)
 {
     ::lifecycle::Manager::TransitionResult r =
         ::lifecycle::Manager::TransitionResult::NONE;
@@ -168,22 +130,6 @@ void initLifecycle(
 
 </pre></td></tr>
 </table>
-
-## Constants
-All the constants should be upper_case
-<table>
-<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
-<tr><td><pre lang="cpp">
-
-const uint32_t INITIAL_TIME = 1;
-
-</pre></td><td><pre lang="cpp">
-
-const uint32_t cInitialTime = 1;
-
-</pre></td></tr>
-</table>
-
 
 ## Type Names
 Type names, such as typedef, struct, union, class should
@@ -211,6 +157,69 @@ class CANFrame
 typedef CANFrame<64> CANFdFrame;
 </pre></td></tr>
 </table>
+
+## Constants
+All the constants should be upper_case
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+const uint32_t INITIAL_TIME = 1;
+
+</pre></td><td><pre lang="cpp">
+
+const uint32_t cInitialTime = 1;
+
+</pre></td></tr>
+</table>
+
+## Variable Names
+Variable names are written in camelCase starting with a lower case letter.
+
+We do *not* use [Hungarian Notation](https://en.wikipedia.org/wiki/Hungarian_notation),
+although you sometimes might find the prefix **p** for pointers or **s** for
+static member variables.
+
+All variable names like global variable names, local variable name, function
+parameter names are treated similarly. The exception are member variable
+names.
+
+In general, spend time finding good variable names. Don't try to abbreviate
+too much, also don't use patterns like stripping vowels from names to make
+them shorter. Also `a`, `b` or `z` are normally not good choices ;-).
+
+Reading your code should be pleasant and joyful to others.
+
+### Boolean Variables
+Boolean variables should start with 'is' or 'has'.
+
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+void shutdown(Connection& connection)
+{
+    bool isSuccessfullyTerminated =
+        connection.terminate();
+}
+
+</pre></td><td><pre lang="cpp">
+
+void shutdown(Connection& connection)
+{
+    bool terminated = connection.terminate();
+}
+
+</pre></td></tr>
+</table>
+
+## Summary
+:white_check_mark: Variable names are camelCase
+
+:white_check_mark: Boolean variables start with _is_ or _has_
+
+:white_check_mark: Member variables are prefixed with *f*, *m* or *_*
+
 
 # Class
 
