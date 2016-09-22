@@ -122,7 +122,6 @@ void shutdown(Connection& connection)
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
-~~~~
 
 void initLifecycle(
     ::lifecycle::Mode mode,
@@ -131,10 +130,8 @@ void initLifecycle(
     ::lifecycle::Manager::TransitionResult result =
         ::lifecycle::Manager::TransitionResult::NONE;
 }
-~~~~
 
 </pre></td><td><pre lang="cpp">
-~~~~
 
 void initLifecycle(
     ::lifecycle::Mode Md,
@@ -143,7 +140,6 @@ void initLifecycle(
     ::lifecycle::Manager::TransitionResult r =
         ::lifecycle::Manager::TransitionResult::NONE;
 }
-~~~~
 
 </pre></td></tr>
 </table>
@@ -154,11 +150,11 @@ All the constants should be upper_case
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
-`const uint32_t INITIAL_TIME = 1;`
+const uint32_t INITIAL_TIME = 1;
 
 </pre></td><td><pre lang="cpp">
 
-`const uint32_t cInitialTime = 1;`
+const uint32_t cInitialTime = 1;
 
 </pre></td></tr>
 </table>
@@ -170,7 +166,6 @@ be written in 'CamelCase'
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
-~~~
 
 template <size_t PAYLOAD_SIZE>
 struct CanFrame
@@ -180,10 +175,7 @@ struct CanFrame
 
 typedef CanFrame<64> CanFdFrame;
 
-~~~
 </pre></td><td><pre lang="cpp">
-~~~
 typedef CanFrame<64> CANFdFrame;
-~~~
 </pre></td></tr>
 </table>
