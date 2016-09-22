@@ -11,9 +11,13 @@
 * [Class-naming](#class)
  * [Private members](#private-members)
 
+## All names should be in English
+Only if there is a necessity to use names from a documentation in 
+original Language, then it's allowed, otherwise, please, use English.
 
 ## Abreviation Names
 Abreviation shold be written in lower-case with the capital first letter
+When the name is connected to another, the readbility is seriously reduced; the word following the abbreviation does not stand out as it should.
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -33,12 +37,15 @@ initUSBDevice();
 
 
 ## Function Names
-Function names are written in 'camelCase' starting with a lower case letter.
-Function name should be a verb, it should refleck an action.
+Names representing functions must be verbs and written in mixed case starting with lower case.
 
+The name of the object is implicit, and should be avoided in a method name.
 Try to be precise without repeating yourself. For example if you provide a
 function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
 The signature tells the user that this function sends a `CanFrame`.
+```cpp
+
+```
 
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
@@ -55,6 +62,8 @@ public:
         ICanFrameListener& listener);
 };
 
+line.getLength();
+
 </pre></td><td><pre lang="cpp">
 
 void ShutdownEcu();
@@ -68,8 +77,11 @@ public:
         ICanFrameListener& listener);
 };
 
+line.getLineLength();
+
 </pre></td></tr>
 </table>
+
 
 ## Boolean Functions
 If a function returns a boolean value which is not intended to signal success
@@ -103,37 +115,47 @@ public:
 
 # Global, Local, Parameter Names
 
+* All the variables should be readable and make sence. 
+* If it's possible to not create new abreviation, then don't.
+* Pointers should have prefix *p*
+
 ### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
-void initLifecycle(
-    Mode mode,
+Manager::TransitionResult 
+connect(
+    Database database,
     Manager* pManager
 )
 {
+    database.add(pManager);
     Manager::TransitionResult result =
         Manager::TransitionResult::NONE;
+    return result;
 }
 
 </pre></td><td><pre lang="cpp">
 
-void initLifecycle(
-    Mode Md,
-    Manager* ptr_mgr
+Manager::TransitionResult 
+connect(
+    Database db,
+    Manager* mgr
 )
 {
-    ::lifecycle::Manager::TransitionResult r =
-        ::lifecycle::Manager::TransitionResult::NONE;
+    db.add(mgr);
+    Manager::TransitionResult rst =
+        Manager::TransitionResult::NONE;
+    return rst;
 }
 
 </pre></td></tr>
 </table>
 
 ## Type Names
-Type names, such as typedef, struct, union, class should
-be written in 'CamelCase'
+Names representing types must be in mixed case starting with upper case.
+
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -159,7 +181,7 @@ typedef CANFrame<64> CANFdFrame;
 </table>
 
 ## Constants
-All the constants should be upper_case
+Named constants (including enumeration values) must be all uppercase using underscore to separate words.
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -174,7 +196,7 @@ const uint32_t cInitialTime = 1;
 </table>
 
 ## Variable Names
-Variable names are written in camelCase starting with a lower case letter.
+Variable names must be in mixed case starting with lower case.
 
 We do *not* use [Hungarian Notation](https://en.wikipedia.org/wiki/Hungarian_notation),
 although you sometimes might find the prefix **p** for pointers or **s** for
@@ -213,15 +235,47 @@ void shutdown(Connection& connection)
 </pre></td></tr>
 </table>
 
+### Plural form should be used on names representing a collection of objects.
+Enhances readability since the name gives the user an immediate clue of the type 
+of the variable and the operations that can be performed on its elements.
+
+```cpp
+vector<Point>  points;
+int            values[];
+```
+
+### Negated boolean variable names must be avoided
+The problem arises when such a name is used in conjunction with the logical negation operator as this results in a double negative. It is not immediately apparent what !isNotFound means.
+
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+bool isError;
+bool isFound;
+
+</pre></td><td><pre lang="cpp">
+
+bool isNoError
+bool isNotFound
+
+</pre></td></tr>
+</table>
+
 ## Summary
 :white_check_mark: Variable names are camelCase
 
 :white_check_mark: Boolean variables start with _is_ or _has_
 
-:white_check_mark: Member variables are prefixed with *f*, *m* or *_*
+:white_check_mark: Member variables are prefixed with the underscore *_*
 
+## Namespaces
+Names representing namespaces should be all lowercase.
+`model::analyzer, io::iomanager, common::math::geometry`
 
 # Class
+## Public Methods
+Names representing methods must be verbs and written in mixed case starting with lower case.
 
 ## Private Members
 Should be with underscore prefix
