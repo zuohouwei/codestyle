@@ -1,3 +1,5 @@
+# Folder Structure
+
 # File Names
 Files that contain classes should contain only one class. The header and
 source file are named like the class **MyClass.h** and **MyClass,cpp**.
@@ -6,14 +8,16 @@ is *.c*, the extension for assembly files is *.s*. Header files have the
 extension *.h* no matter which content. Sometimes you might find *.hpp* files
 that contain implementation source code of class templates.
 
-# Include Guards
+# Header Files
+
+## Include Guards
 Include guards shall prevent code from being processed multiple times which
 would cause compilation errors. There are two forms of allowed include guards:
 1. All capital letter path beginning after the *include* folder separated by  
    underscore and terminated by *_H_*.
 2. A unique identifier like *HE793FCD8_FC04_45D3_A438_533341BBA7B1*
 
-## Example
+### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -47,7 +51,11 @@ would cause compilation errors. There are two forms of allowed include guards:
 </pre></td></tr>
 </table>
 **
-## Summary
+### Summary
 :white_check_mark: Include guard is all UPPER_CASE file name + path
 
 :white_check_mark: Include guard is unique identifier
+
+
+# Source Files
+
