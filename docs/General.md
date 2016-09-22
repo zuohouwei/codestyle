@@ -1,12 +1,13 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Const Corectness](#Const Corectness)
-* [Constants](#Constants)
-* [Variables](#Variables)
-* [Includes](#Includes)
-* [Functions](#Functions)
-* [Comments](#Comments)
+* [Const Corectness](#const-corectness)
+* [Constants](#constants)
+* [Variables](#variables)
+* [Includes](#includes)
+* [Functions](#functions)
+* [Comments](#comments)
+* [Namespaces](#namespaces)
 
 
 ## Const Corectness
@@ -136,6 +137,22 @@ class Timeout
 </pre></td></tr>
 </table>
 **
+
+## Namespaces
+Global namespaces and variables should always be referred to using the :: operator.
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+::common::io::getDigital();
+
+</pre></td><td><pre lang="cpp">
+
+common::io::getDigital();
+
+</pre></td></tr>
+</table>
+
 ### Summary
 :white_check_mark: Try to encode all important information in the source code itself.
 
