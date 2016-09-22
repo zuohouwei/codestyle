@@ -1,6 +1,16 @@
-# Indentation
-# Braces
-# Whitespace (Tabs Vs. Space)
+[Main Page](README.md)
+
+# Table of contents
+* [Indentation](#Indentation)
+* [Braces](#Braces)
+* [Whitespace (Tabs Vs. Space)](#Whitespace (Tabs Vs. Space))
+* [Line Wraping](#Line Wraping)
+* [Control Statements](#Control Statements)
+* [Comments](#Comments)
+
+## Indentation
+## Braces
+## Whitespace (Tabs Vs. Space)
 ## Tabs vs. Spaces
 All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
@@ -89,8 +99,8 @@ PortSync::sendAnnounceMessage()
 </pre></td></tr>
 </table>
 
-# Line Wraping
+## Line Wraping
 
-# Control Statements
+## Control Statements
 
-# Comments
+## Comments
