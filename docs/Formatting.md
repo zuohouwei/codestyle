@@ -107,4 +107,38 @@ At most 80 characters was used by old retarded people.
 
 ## Control Statements
 
+### If-statements
+Curly brackets go into new lines.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+if (condition)
+{
+    //do something
+}
+else if (condition2)
+{
+    //do something else
+}
+else
+{
+    //default case
+}
+
+</pre></td><td><pre lang="cpp">
+
+if (condition)
+    //do something
+else if (condition2) //do something else
+else
+{
+    //default case
+}
+
+</pre></td></tr>
+</table>
+
 ## Comments
