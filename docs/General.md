@@ -6,6 +6,7 @@
 * [Variables](#Variables)
 * [Includes](#Includes)
 * [Functions](#Functions)
+* [Comments](#Comments)
 
 
 ## Const Corectness
@@ -101,4 +102,40 @@ The style used to specify an include shall reflect the locality of the included 
 :white_check_mark: for module external includes use angle brackets *<>*
 
 ## Functions
+
+## Comments
+Comments
+
+Generally speaking, there shouldn't be many comments in source files. If you have to write comments for a piece of code, consider rewriting it so that it is easier to understand. Extracting inlined functions with speaking names might be one possible approach.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+class Timeout 
+{
+    public:
+
+    static const uint8_t MAX_TIMEOUT_IN_MS = 128U; 
+    
+    ...
+}
+
+</pre></td><td><pre lang="cpp">
+
+class Timeout 
+{
+    public:
+
+    static const uint8_t MAX_TIMEOUT = 128U; // unit is miliseconds
+    
+    ...
+}
+
+</pre></td></tr>
+</table>
+**
+### Summary
+:white_check_mark: try to encode all important information in the source code itself.
 
