@@ -45,10 +45,11 @@ If a list of parameters to a function becomes to long to fit into one line, each
 <tr><td><pre lang="cpp">
 
 void MyClass::functionWithManyParams(
-        int parameter1,
-        int parameter2,
-        int parameter3,
-        int parameter4);
+    int parameter1,
+    int parameter2,
+    int parameter3,
+    int parameter4
+);
 
 </pre></td><td><pre lang="cpp">
 
