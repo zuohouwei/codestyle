@@ -1,3 +1,9 @@
+# Ordering (methods, members, etc)j
+
+# delarations (alignment, members)
+
+# templates
+
 # Class Names
 Class names are written in camel case starting with a capital letter. Also abbreviations like CAN are camel case: Can. _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
 
