@@ -1,4 +1,4 @@
-[Main Page](README.md)
+[Main Page](../README.md)
 
 # Table of contents
 * [Const Corectness](#Const Corectness)
@@ -13,7 +13,7 @@
 Const should be used wherever possible. It makes an interfaces easier to use and offers potential for optimization to the compiler.
 
 ## Constants
-Constants including `enum` values are written all UPPER_CASE with underscore
+Constants including `enum` values are written all `UPPER_CASE` with underscore
 word separation.
 
 ### Example
