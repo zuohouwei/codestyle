@@ -1,4 +1,4 @@
-[Main Page](README.md)
+[Main Page](../README.md)
 
 # Table of contents
 * [Abreviation Names](#abreviation-names)
