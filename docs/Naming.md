@@ -1,5 +1,5 @@
 # Content
-[Class-naming](#Class)
+[Class-naming](#class)
 
 
 ## Abreviation Names
