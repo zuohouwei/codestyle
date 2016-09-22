@@ -3,15 +3,15 @@
 # Table of contents
 * [Indentation](#Indentation)
 * [Braces](#Braces)
-* [Whitespace (Tabs Vs. Space)](#Whitespace (Tabs Vs. Space))
+* [Whitespace](#Whitespace)
 * [Line Wraping](#Line Wraping)
 * [Control Statements](#Control Statements)
 * [Comments](#Comments)
 
 ## Indentation
 ## Braces
-## Whitespace (Tabs Vs. Space)
-## Tabs vs. Spaces
+## Whitespace
+### Tabs vs. Spaces
 All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
 ### Example
@@ -43,7 +43,7 @@ public:
 
 :no_entry: Tabs
 
-## Trailing whitespaces
+### Trailing whitespaces
 There must not be any trailing whitespace. It is highly recommended to adjust your IDE to highlight trailing whitespaces.
 
 ## Line breaks
@@ -102,7 +102,7 @@ PortSync::sendAnnounceMessage()
 ## Line Wraping
 Each line of text in your code should be at most 120 characters long.
 
-### Logic
+### Rational
 At most 80 characters was used by old retarded people.
 
 ## Control Statements
@@ -135,7 +135,7 @@ if (condition) {
 }
 else if (condition2)
     //do something else
-else {//default case}
+else {/*default case*/}
 
 </pre></td></tr>
 </table>
