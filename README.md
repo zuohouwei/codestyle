@@ -3,7 +3,7 @@ Code style is a matter of personal taste and discussions about it tend to become
 
 ## Table of Contents
 * [General](General.md)
-* [Nameing](Naming.md)
+* [Naming](Naming.md)
 * [Classes](Classes.md)
 * [Files](Files.md)
 * [Formatting](Formatting.md)
