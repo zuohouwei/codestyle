@@ -1,11 +1,11 @@
-# Function Names
-Function names are written in camelCase starting with a lower case letter.
+## Function Names
+Function names are written in 'camelCase' starting with a lower case letter.
 
 Try to be precise without repeating yourself. For example if you provide a
 function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
 The signature tells the user that this function sends a `CanFrame`.
 
-## Example
+### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -37,7 +37,7 @@ public:
 </pre></td></tr>
 </table>
 
-## Boolean Functions
+## #Boolean Functions
 If a function returns a boolean value which is not intended to signal success
 or failure of the function call, the function should start with _is_ or _has_.
 Boolean member functions tend to be `const`.
@@ -68,7 +68,7 @@ public:
 </pre></td></tr>
 </table>
 
-# Variable Names
+## Variable Names
 Variable names are written in camelCase starting with a lower case letter.
 
 We do *not* use [Hungarian Notation](https://en.wikipedia.org/wiki/Hungarian_notation),
@@ -85,10 +85,10 @@ them shorter. Also `a`, `b` or `z` are normally not good choices ;-).
 
 Reading your code should be pleasant and joyful to others.
 
-## Boolean Variables
-Boolean variables should start with _is_ or _has_.
+### Boolean Variables
+Boolean variables should start with 'is' or 'has'.
 
-### Example
+#### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -116,12 +116,13 @@ void shutdown(Connection& connection)
 
 :white_check_mark: Member variables are prefixed with *f*, *m* or *_*
 
-# Global, Local, Parameter Names
+## Global, Local, Parameter Names
 
 ### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
+~~~~
 
 void initLifecycle(
     ::lifecycle::Mode mode,
@@ -130,8 +131,10 @@ void initLifecycle(
     ::lifecycle::Manager::TransitionResult result =
         ::lifecycle::Manager::TransitionResult::NONE;
 }
+~~~~
 
 </pre></td><td><pre lang="cpp">
+~~~~
 
 void initLifecycle(
     ::lifecycle::Mode Md,
@@ -140,5 +143,47 @@ void initLifecycle(
     ::lifecycle::Manager::TransitionResult r =
         ::lifecycle::Manager::TransitionResult::NONE;
 }
+~~~~
+
+</pre></td></tr>
+</table>
+
+## Constants
+All the constants should be upper_case
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+`const uint32_t INITIAL_TIME = 1;`
+
+</pre></td><td><pre lang="cpp">
+
+`const uint32_t cInitialTime = 1;`
+
+</pre></td></tr>
+</table>
+
+
+## Type Names
+Type names, such as typedef, struct, union, class should
+be written in 'CamelCase'
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+~~~
+
+template <size_t PAYLOAD_SIZE>
+struct CanFrame
+{
+    ...
+}
+
+typedef CanFrame<64> CanFdFrame;
+
+~~~
+</pre></td><td><pre lang="cpp">
+~~~
+typedef CanFrame<64> CANFdFrame;
+~~~
 </pre></td></tr>
 </table>
