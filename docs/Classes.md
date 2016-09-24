@@ -113,3 +113,46 @@ public:
 
 :white_check_mark: Getters should use attribute style
 
+# Class Invariant
+Use class if the class has an invariant; use struct if the data members can vary independently.
+
+Readability. Ease of comprehension. The use of class alerts the programmer to the need for an invariant. This is a useful convention.
+
+Note
+
+An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume. After the invariant is established (typically by a constructor) every member function can be called for the object. An invariant can be stated informally (e.g., in a comment) or more formally using Expects.
+
+If all data members can vary independently of each other, no invariant is possible.
+
+### Example
+```cpp
+struct Pair {  // the members can vary independently
+    string name;
+    int volume;
+};
+```
+but:
+```cpp
+class Date {
+public:
+    // validate that {yy, mm, dd} is a valid date and initialize
+    Date(int yy, Month mm, char dd);
+    // ...
+private:
+    int y;
+    Month m;
+    char d;    // day
+};
+```
+## Avoid protected data
+Protected data is a source of complexity and errors. protected data complicated the statement of invariants. protected data inherently violates the guidance against putting data in base classes, which usually leads to having to deal virtual inheritance as well.
+
+Protected member function can be just fine.
+
+## Use class hierarchies to represent concepts with inherent hierarchical structure (only)
+Direct representation of ideas in code eases comprehension and maintenance. Make sure the idea represented in the base class exactly matches all derived types and there is not a better way to express it than using the tight coupling of inheritance.
+
+Do not use inheritance when simply having a data member will do. Usually this means that the derived type needs to override a base virtual function or needs access to a protected member.
+
+### Example
+ ... can be an example with a class that inherits from the base class and from ISomeListener... 
