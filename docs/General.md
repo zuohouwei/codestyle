@@ -56,6 +56,42 @@ The style used to specify an include shall reflect the locality of the included 
 :white_check_mark: for module external includes use angle brackets *<>*
 
 ## Functions
+### A function should perform a single logical operation
+A function that performs a single operation is simpler to understand, test, and reuse.
+
+### Keep functions short and simple
+Large functions are hard to read, more likely to contain complex code, and more likely to have variables in larger than minimal scopes. 
+
+Functions with complex control structures are more likely to be long and more likely to hide logical errors
+
+"It doesn't fit on a screen" is often a good practical definition of "far too large." 
+
+Break large functions up into smaller cohesive and named functions. Small simple functions are easily inlined where the cost of a function call is significant.
+
+### For "in" parameters, pass cheaply-copied types by value and others by reference to const
+Both let the caller know that a function will not modify the argument, and both allow initialization by rvalues.
+
+What is "cheap to copy" depends on the machine architecture, but two or three words (doubles, pointers, references) are usually best passed by value. 
+
+When copying is cheap, nothing beats the simplicity and safety of copying, and for small objects (up to two or three words) it is also faster than passing by reference because it does not require an extra indirection to access from the function.
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+// pass by reference to const; always cheap
+void f1(const string& s);  
+
+// Unbeatable
+void f3(int x);            
+
+</pre></td><td><pre lang="cpp">
+// potentially expensive
+void f2(string s);         
+
+// overhead on access in f4()
+void f4(const int& x);
+
+</pre></td></tr>
+</table>
 
 ## Comments
 Comments
