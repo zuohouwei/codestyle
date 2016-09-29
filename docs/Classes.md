@@ -3,10 +3,10 @@
 # Classes
 
 ## Table of contents
-* [Class Names](#class_names)
-* [Member Variable Names](#member_variable_names)
-* [Getters, Setters, Attribute Functions](#)
-* [Class Invariant](#class_invariant)
+* [Class Names](#class names)
+* [Member Variable Names](#member variable names)
+* [Getters, Setters, Attribute Functions](#getters, setters, attribute functions)
+* [Class Invariant](#class invariant)
 * [Avoid protected data](#avoid_protected_data)
 * [Use class hierarchies to represent concepts with inherent hierarchical structure (only)](#)
 * [Ordering](#ordering)
@@ -14,7 +14,8 @@
 * [Templates](#templates)
 
 ## Class Names
-Class names are written in camel case starting with a capital letter. Also abbreviations like CAN are camel case: Can. _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
+Class names are written in camel case starting with a capital letter. Also abbreviations like **CAN** are camel case: **Can**. 
+_Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
 
 In unit tests, when writing a mock, the class name is usually postfixed with **Mock**.
 
@@ -22,19 +23,19 @@ In unit tests, when writing a mock, the class name is usually postfixed with **M
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td>
-```
+<pre lang="cpp">
 class CanTransceiver;
 class CanTransceiverMock;
 class FilteredLinFrameListerner;
 class ITransportMessageProvider; //interface
-```
-</td><td><pre lang="cpp">
-
+</pre>
+</td><td>
+<pre lang="cpp">
 class CANTransceiver;
 class filteredLINFrameListener;
 class AbstractDiagJob; //should be DiagJob
-
-</pre></td></tr>
+</pre>
+</td></tr>
 </table>
 
 ### Summary
@@ -52,7 +53,8 @@ provide and functions, you can omit the prefix.
 ### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
-<tr><td><pre lang="cpp">
+<tr><td>
+<pre lang="cpp">
 
 class CanTransceiver
 {
@@ -65,7 +67,9 @@ struct Result
     uint16_t value;
 };
 
-</pre></td><td><pre lang="cpp">
+</pre>
+</td><td>
+<pre lang="cpp">
 
 class CanTransceiver
 {
@@ -78,7 +82,8 @@ struct Result
     uint16_t value_;
 };
 
-</pre></td></tr>
+</pre>
+</td></tr>
 </table>
 
 
@@ -90,7 +95,8 @@ functions, instead use `const` attribute style functions.
 ### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
-<tr><td><pre lang="cpp">
+<tr><td>
+<pre lang="cpp">
 
 class CanTransceiver
 {
@@ -100,7 +106,9 @@ public:
     BusId busId() const;
 };
 
-</pre></td><td><pre lang="cpp">
+</pre>
+</td><td>
+<pre lang="cpp">
 
 class CanTransceiver
 {
@@ -110,7 +118,8 @@ public:
     BusId getBusId() const;
 };
 
-</pre></td></tr>
+</pre>
+</td></tr>
 </table>
 
 ### Summary
@@ -127,11 +136,11 @@ Use class if the class has an invariant; use struct if the data members can vary
 
 Readability. Ease of comprehension. The use of class alerts the programmer to the need for an invariant. This is a useful convention.
 
-Note
-
-An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume. After the invariant is established (typically by a constructor) every member function can be called for the object. An invariant can be stated informally (e.g., in a comment) or more formally using Expects.
-
-If all data members can vary independently of each other, no invariant is possible.
+**Note**
+> An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume. 
+> After the invariant is established (typically by a constructor) every member function can be called for the object. An invariant can be stated informally (e.g., in a comment) or more formally using Expects.
+>
+> If all data members can vary independently of each other, no invariant is possible.
 
 ### Example
 ```cpp
@@ -153,14 +162,15 @@ private:
     char d;    // day
 };
 ```
+
 ## Avoid protected data
-Protected data is a source of complexity and errors. protected data complicated the statement of invariants. protected data inherently violates the guidance against putting data in base classes, which usually leads to having to deal virtual inheritance as well.
+Protected data is a source of complexity and errors. protected data complicated the statement of invariants. 
+protected data inherently violates the guidance against putting data in base classes, which usually leads to having to deal virtual inheritance as well.
 
 Protected member function can be just fine.
 
 ## Use class hierarchies to represent concepts with inherent hierarchical structure (only)
 Direct representation of ideas in code eases comprehension and maintenance. Make sure the idea represented in the base class exactly matches all derived types and there is not a better way to express it than using the tight coupling of inheritance.
-
 Do not use inheritance when simply having a data member will do. Usually this means that the derived type needs to override a base virtual function or needs access to a protected member.
 
 ### Example
