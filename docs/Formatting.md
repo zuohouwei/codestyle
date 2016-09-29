@@ -3,15 +3,15 @@
 # Table of contents
 * [Indentation](#Indentation)
 * [Braces](#Braces)
-* [Whitespace (Tabs Vs. Space)](#Whitespace (Tabs Vs. Space))
+* [Whitespace](#Whitespace)
 * [Line Wraping](#Line Wraping)
 * [Control Statements](#Control Statements)
 * [Comments](#Comments)
 
 ## Indentation
 ## Braces
-## Whitespace (Tabs Vs. Space)
-## Tabs vs. Spaces
+## Whitespace
+### Tabs vs. Spaces
 All of our code should be **tab-free**! For *indentation* use **4 spaces.**
 
 ### Example
@@ -43,7 +43,7 @@ public:
 
 :no_entry: Tabs
 
-## Trailing whitespaces
+### Trailing whitespaces
 There must not be any trailing whitespace. It is highly recommended to adjust your IDE to highlight trailing whitespaces.
 
 ## Line breaks
@@ -102,9 +102,132 @@ PortSync::sendAnnounceMessage()
 ## Line Wraping
 Each line of text in your code should be at most 120 characters long.
 
-### Logic
-At most 80 characters was used by old retarted people.
+### Rational
+At most 80 characters was used by old retarded people.
 
 ## Control Statements
+
+### If-statements
+Curly brackets go into new lines.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+if (condition)
+{
+    //do something
+}
+else if (condition2)
+{
+    //do something else
+}
+else
+{
+    //default case
+}
+
+</pre></td><td><pre lang="cpp">
+
+if (condition) {
+    //do something
+}
+else if (condition2)
+    //do something else
+else {/*default case*/}
+
+</pre></td></tr>
+</table>
+
+### For-Loops
+Curly brackets go into new lines.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+for (int i = 1; i < 20; ++i)
+{
+    //do something
+}
+
+</pre></td><td><pre lang="cpp">
+
+for (int i = 1; i < 20; ++i) {
+    //do something
+}
+
+</pre></td></tr>
+</table>
+
+### While-Loops
+Curly brackets go into new lines, except the do while loop.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+while (condition)
+{
+    //do something
+}
+
+do {
+    //something
+} while (condition);
+
+</pre></td><td><pre lang="cpp">
+
+while (condition) {
+    //do something
+}
+
+do
+{
+    //something
+} while (condition);
+
+
+</pre></td></tr>
+</table>
+
+### Switch-Case
+
+Curly brackets go into new lines. Every switch statement must have a default branch.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+switch (var)
+{
+    case 1:
+        //code for case 1
+        break;
+    case 2:
+        //code for case 2
+        break;
+    default:
+        //default code
+        break;
+}
+
+</pre></td><td><pre lang="cpp">
+
+switch (var) {
+case 1:
+    //code for case 1
+    break;
+case 2:
+    //code for case 2
+    break;
+}
+
+</pre></td></tr>
+</table>
 
 ## Comments
