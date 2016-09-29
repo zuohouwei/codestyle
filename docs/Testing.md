@@ -1,3 +1,15 @@
+[Main Page](../README.md)
+
+# Table of contents
+* [Test frameworks](#test_frameworks)
+* [Best practices for unit tests](#best_practices_for_unit_tests)
+* [Test names](#test_names)
+* [Logic in tests](#logic_in_tests)
+* [Use of mocks](#use_of_mocks)
+* [Use of fixtures](#use_of_fixtures)
+* [Maximise the usefulness of the test output in case of failure](#)
+* [Use an anonymous namespace for your tests](#)
+
 # Test framework(s) to be used
 Gtest/Gmock
 
