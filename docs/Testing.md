@@ -1,3 +1,7 @@
+# Test framework(s) to be used
+Gtest/Gmock
+
+
 # Best practices for unit tests
 
 The person writing the tests should be the same person writing the implementation. Ideally by writing tests first, see them fail, then change the implementation to make the test pass.
