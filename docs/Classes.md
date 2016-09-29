@@ -1,8 +1,15 @@
-# Ordering (methods, members, etc)j
+[Main Page](../README.md)
 
-# delarations (alignment, members)
-
-# templates
+# Table of contents
+* [Class Names](#class_names)
+* [Member Variable Names](#member_variable_names)
+* [Getters, Setters, Attribute Functions](#)
+* [Class Invariant](#class_invariant)
+* [Avoid protected data](#avoid_protected_data)
+* [Use class hierarchies to represent concepts with inherent hierarchical structure (only)](#)
+* [Ordering](#ordering)
+* [Declarations](#declarations)
+* [Templates](#templates)
 
 # Class Names
 Class names are written in camel case starting with a capital letter. Also abbreviations like CAN are camel case: Can. _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
@@ -31,7 +38,7 @@ class AbstractDiagJob; //should be DiagJob
 ## Summary
 :white_check_mark: Class names are CamelCase
 
-## Member Variable Names
+# Member Variable Names
 Member variables of a `class`, `struct` or `union` shall be prefixed. You will
 find the prefix **f** a lot but also **m** or **_**. Don't invent any new
 prefixes, postfixes are forbidden. Also, be consistent within your module, never
@@ -40,7 +47,7 @@ mix styles.
 If a struct is used as a *POD*, i.e. all members are public and it does not
 provide and functions, you can omit the prefix.
 
-### Example
+## Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -73,12 +80,12 @@ struct Result
 </table>
 
 
-## Getters, Setters, Attribute Functions
+# Getters, Setters, Attribute Functions
 In general `set` functions should be avoided. Classes should be initialized
 when calling their constructor. To read properties of a class, avoid `get`
 functions, instead use `const` attribute style functions.
 
-### Example
+## Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -144,15 +151,29 @@ private:
     char d;    // day
 };
 ```
-## Avoid protected data
+# Avoid protected data
 Protected data is a source of complexity and errors. protected data complicated the statement of invariants. protected data inherently violates the guidance against putting data in base classes, which usually leads to having to deal virtual inheritance as well.
 
 Protected member function can be just fine.
 
-## Use class hierarchies to represent concepts with inherent hierarchical structure (only)
+# Use class hierarchies to represent concepts with inherent hierarchical structure (only)
 Direct representation of ideas in code eases comprehension and maintenance. Make sure the idea represented in the base class exactly matches all derived types and there is not a better way to express it than using the tight coupling of inheritance.
 
 Do not use inheritance when simply having a data member will do. Usually this means that the derived type needs to override a base virtual function or needs access to a protected member.
 
-### Example
- ... can be an example with a class that inherits from the base class and from ISomeListener... 
+## Example
+ ... can be an example with a class that inherits from the base class and from ISomeListener...
+
+# Ordering
+TBD
+    - methods
+    - members
+
+# Declarations
+TBD
+    - alignment
+    - members
+
+# Templates
+TBD
+
