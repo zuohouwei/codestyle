@@ -6,6 +6,7 @@
 * [Functions](#functions)
 * [Comments](#comments)
 * [Namespaces](#namespaces)
+* [Null](#null)
 
 
 ## Const Corectness
@@ -144,4 +145,7 @@ common::io::getDigital();
 
 ### Summary
 :white_check_mark: Try to encode all important information in the source code itself.
+
+## NULL
+Because the MACRO NULL can lead to incompatibility issues between C and C++ the literal 0L is used instead.
 
