@@ -39,7 +39,7 @@ class AbstractDiagJob; //should be DiagJob
 </table>
 
 ### Summary
-:white_check_mark: Class names are CamelCase
+* Class names are CamelCase
 
 ## Member Variable Names
 Member variables of a `class`, `struct` or `union` shall be prefixed. You will
@@ -123,13 +123,10 @@ public:
 </table>
 
 ### Summary
-:white_check_mark: Function names are camelCase
-
-:white_check_mark: Boolean functions start with _is_ or _has_
-
-:white_check_mark: Consider signature part of name
-
-:white_check_mark: Getters should use attribute style
+* Function names are camelCase
+* Boolean functions start with _is_ or _has_
+* Consider signature part of name
+* Getters should use attribute style
 
 ## Class Invariant
 Use class if the class has an invariant; use struct if the data members can vary independently.
