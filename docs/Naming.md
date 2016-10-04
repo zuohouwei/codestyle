@@ -1,7 +1,7 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Abreviation Names](#abreviation-names)
+* [Abbreviation Names](#abbreviation-names)
 * [Function Names](#function-names)
 * [Boolean Functions](#boolean-functions)
 * [Global, Local, Parameter Names](#global-local-parameter-names)
@@ -12,12 +12,12 @@
  * [Private members](#private-members)
 
 ## All names should be in English
-Only if there is a necessity to use names from a documentation in 
+Only if there is a necessity to use names from a documentation in
 original Language, then it's allowed, otherwise, please, use English.
 
-## Abreviation Names
-Abreviation shold be written in lower-case with the capital first letter
-When the name is connected to another, the readbility is seriously reduced; the word following the abbreviation does not stand out as it should.
+## Abbreviation Names
+Abbreviation should be written in lower-case with the capital first letter
+When the name is connected to another, the readability is seriously reduced; the word following the abbreviation does not stand out as it should.
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -115,15 +115,15 @@ public:
 
 # Global, Local, Parameter Names
 
-* All the variables should be readable and make sence. 
-* If it's possible to not create new abreviation, then don't.
+* All the variables should be readable and make sense.
+* If it's possible to not create new abbreviation, then don't.
 
 ### Example
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
-Manager::TransitionResult 
+Manager::TransitionResult
 connect(
     Database database,
     Manager* manager
@@ -137,7 +137,7 @@ connect(
 
 </pre></td><td><pre lang="cpp">
 
-Manager::TransitionResult 
+Manager::TransitionResult
 connect(
     Database db,
     Manager* mgr
@@ -235,7 +235,7 @@ void shutdown(Connection& connection)
 </table>
 
 ### Plural form should be used on names representing a collection of objects.
-Enhances readability since the name gives the user an immediate clue of the type 
+Enhances readability since the name gives the user an immediate clue of the type
 of the variable and the operations that can be performed on its elements.
 
 ```cpp
