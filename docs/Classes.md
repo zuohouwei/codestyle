@@ -3,15 +3,16 @@
 # Classes
 
 ## Table of contents
-* [Class Names](#class names)
-* [Member Variable Names](#member variable names)
-* [Getters, Setters, Attribute Functions](#getters, setters, attribute functions)
-* [Class Invariant](#class invariant)
-* [Avoid protected data](#avoid_protected_data)
+* [Class Names](#class-names)
+* [Member Variable Names](#member-variable-names)
+* [Getters, Setters, Attribute Functions](#getters,-setters,-attribute-functions)
+* [Class Invariant](#class-invariant)
+* [Avoid protected data](#avoid-protected-data)
 * [Use class hierarchies to represent concepts with inherent hierarchical structure (only)](#)
 * [Ordering](#ordering)
 * [Declarations](#declarations)
 * [Templates](#templates)
+* [Initializer List](Formatting.md#initializer-list)
 
 ## Class Names
 Class names are written in camel case starting with a capital letter. Also abbreviations like **CAN** are camel case: **Can**.

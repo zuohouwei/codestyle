@@ -10,7 +10,7 @@
 * [Initializer List](#initializer-list)
 
 ## Indentation
-Our indentation is 4.
+Our indentation is 4 (spaces).
 
 ## Braces
 Opening braces always go into a new line.
