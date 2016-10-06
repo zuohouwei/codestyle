@@ -5,11 +5,11 @@
 * [Function Names](#function-names)
 * [Boolean Functions](#boolean-functions)
 * [Global, Local, Parameter Names](#global-local-parameter-names)
- * [Types](#type-names)
- * [Constants](#constants)
- * [Variable Names](#variable-names)
+* [Types](#type-names)
+* [Constants](#constants)
+* [Variable Names](#variable-names)
 * [Class-naming](#class)
- * [Private members](#private-members)
+* [Private members](#private-members)
 
 ## All names should be in English
 Only if there is a necessity to use names from a documentation in

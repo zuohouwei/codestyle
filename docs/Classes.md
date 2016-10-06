@@ -14,7 +14,7 @@
 * [Templates](#templates)
 
 ## Class Names
-Class names are written in camel case starting with a capital letter. Also abbreviations like **CAN** are camel case: **Can**. 
+Class names are written in camel case starting with a capital letter. Also abbreviations like **CAN** are camel case: **Can**.
 _Interface names_ start prefixed with a capital **I**. Names of abstract classes are not treated specially any more, we used to prefix them with **Abstract**.
 
 In unit tests, when writing a mock, the class name is usually postfixed with **Mock**.
@@ -134,7 +134,7 @@ Use class if the class has an invariant; use struct if the data members can vary
 Readability. Ease of comprehension. The use of class alerts the programmer to the need for an invariant. This is a useful convention.
 
 **Note**
-> An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume. 
+> An invariant is a logical condition for the members of an object that a constructor must establish for the public member functions to assume.
 > After the invariant is established (typically by a constructor) every member function can be called for the object. An invariant can be stated informally (e.g., in a comment) or more formally using Expects.
 >
 > If all data members can vary independently of each other, no invariant is possible.
@@ -161,7 +161,7 @@ private:
 ```
 
 ## Avoid protected data
-Protected data is a source of complexity and errors. protected data complicated the statement of invariants. 
+Protected data is a source of complexity and errors. protected data complicated the statement of invariants.
 protected data inherently violates the guidance against putting data in base classes, which usually leads to having to deal virtual inheritance as well.
 
 Protected member function can be just fine.

@@ -1,15 +1,20 @@
-[Main Page](README.md)
+[Main Page](../README.md)
 
 # Table of contents
-* [Indentation](#Indentation)
-* [Braces](#Braces)
-* [Whitespace](#Whitespace)
-* [Line Wraping](#Line Wraping)
-* [Control Statements](#Control Statements)
-* [Comments](#Comments)
+* [Indentation](#indentation)
+* [Braces](#braces)
+* [Whitespace](#whitespace)
+* [Line Wrapping](#line-wrapping)
+* [Control Statements](#control-statements)
+* [Comments](#comments)
+* [Initializer List](#initializer-list)
 
 ## Indentation
+Our indentation is 4.
+
 ## Braces
+Opening braces always go into a new line.
+
 ## Whitespace
 ### Tabs vs. Spaces
 All of our code should be **tab-free**! For *indentation* use **4 spaces.**
@@ -99,7 +104,7 @@ PortSync::sendAnnounceMessage()
 </pre></td></tr>
 </table>
 
-## Line Wraping
+## Line Wrapping
 Each line of text in your code should be at most 120 characters long.
 
 ### Rational
@@ -231,3 +236,55 @@ case 2:
 </table>
 
 ## Comments
+
+
+## Initializer List
+The initializer list calls the constructors of the base classes followed by the member variables of the class
+in the correct order (order of declaration).
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+class Listener
+:   ::esrlabs::estd::forward_list_node<Listener>
+,   ::can::ICanFrameListener
+{
+public:
+    Listener();
+private:
+    int fNumberOfListeners;
+};
+
+Listener::Listener()
+:   ::esrlabs::estd::forward_list_node<Listener>()
+,   ::can::ICanFrameListener()
+,   fNumberOfListeners(0)
+{}
+
+</pre></td><td><pre lang="cpp">
+
+class Listener
+:   ::esrlabs::estd::forward_list_node<Listener>
+,   ::can::ICanFrameListener
+{
+public:
+    Listener();
+private:
+    int fNumberOfListeners;
+};
+
+Listener::Listener()
+:   ::can::ICanFrameListener()
+,   fNumberOfListeners(0)
+,   ::esrlabs::estd::forward_list_node<Listener>()
+{}
+
+</pre></td></tr>
+</table>
+
+### Summary
+:white_check_mark: Indentation 4 spaces
+
+:no_entry: Tabs
