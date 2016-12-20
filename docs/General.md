@@ -17,7 +17,9 @@ Const should be used wherever possible. It makes an interfaces easier to use and
 The style used to specify an include shall reflect the locality of the included header file.
 
 1. All includes which are part of the module the including header file is part of shall use quotes *""*
-2. All includes which are not part of the module the including header (exterrnal includes) file is part of shall use angle brackets *<>*
+2. All includes which are not part of the module the including header (external includes) file is part of shall use angle brackets *<>*
+3. Sort includes alphabetically
+4. Put external includes after internal ones
 
 ### Example
 <table>
@@ -26,14 +28,14 @@ The style used to specify an include shall reflect the locality of the included 
 
 //File: include/logger/BufferedLoggerOutput.h
 
-#include &lt;estd/forward_list.h&gt;
-#include &lt;util/logger/IComponentMapping.h&gt;
-#include &lt;util/logger/ILoggerOutput.h&gt;
+#include "logger/EntryBuffer.h"
+#include "logger/EntrySerializer.h"
 #include "logger/IEntryOutput.h"
 #include "logger/ILoggerListener.h"
 #include "logger/ILoggerTime.h"
-#include "logger/EntryBuffer.h"
-#include "logger/EntrySerializer.h"
+#include &lt;estd/forward_list.h&gt;
+#include &lt;util/logger/IComponentMapping.h&gt;
+#include &lt;util/logger/ILoggerOutput.h&gt;
 
 </pre></td><td><pre lang="cpp">
 
