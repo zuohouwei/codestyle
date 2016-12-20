@@ -151,3 +151,61 @@ common::io::getDigital();
 ## NULL
 Because the MACRO NULL can lead to incompatibility issues between C and C++ the literal 0L is used instead.
 
+## Expressions with booleans
+
+Never use the constants "true" or "false" as operands to "operator=="
+or "operator !=". It makes the expressions unnecessary long and hard to
+read.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+if (isGood) {
+    ...
+}
+
+if (hasSomething && !isGood) {
+
+}
+
+</pre></td><td><pre lang="cpp">
+
+
+if (true == isGood) {
+    ...
+}
+
+if (true == ((true == hasSomething) && (false == isGood))) {
+    ...
+}
+
+</pre></td></tr>
+</table>
+**
+
+## Trivial if-else
+
+Just don't do this, you are not paid per lines of codes produced.
+
+### Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+return isGood;
+
+</pre></td><td><pre lang="cpp">
+
+if (isGood) {
+    return true;
+}
+else {
+    return false;
+}
+
+</pre></td></tr>
+</table>
+**
+
