@@ -187,7 +187,7 @@ if (true == ((true == hasSomething) && (false == isGood))) {
 
 ## Trivial if-else
 
-Just don't do this, you are not paid per lines of codes produced.
+Just don't do this, you are not paid per lines of code produced.
 
 ### Example
 <table>
