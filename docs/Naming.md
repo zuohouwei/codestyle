@@ -94,7 +94,7 @@ bool CanTransceiver::addGlobalListener(ICanFrameListener& listener)
 ```
 
 Here is a list of common postfixes:
-- "_nvt": Used for non-virtual-thunk wrappers.
+- `_nvt`: Used for non-virtual-thunk wrappers.
 - tbd...
 
 
