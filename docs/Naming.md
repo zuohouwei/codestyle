@@ -79,7 +79,7 @@ line.getLineLength();
 </pre></td></tr>
 </table>
 
-There is one exception to camelCase. If you need wrapper function, e.g. to reduce the size of non-virtual-thunks, use a "_":
+There is one exception to camelCase. If you need wrapper functions, e.g. to reduce the size of non-virtual-thunks, use an underscore `_`:
 
 ```cpp
 // note: ESR_NOINLINE expands to __attribute__((noinline)) for most compilers
@@ -89,7 +89,7 @@ bool ESR_NOINLINE CanTransceiver::addGlobalListener_nvt(ICanFrameListener& liste
 }
 bool CanTransceiver::addGlobalListener(ICanFrameListener& listener)
 {
-    return addGlobalListener(listener);
+    return addGlobalListener_nvt(listener);
 }
 ```
 
