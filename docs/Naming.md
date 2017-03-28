@@ -43,9 +43,6 @@ The name of the object is implicit, and should be avoided in a method name.
 Try to be precise without repeating yourself. For example if you provide a
 function to send a `CanFrame` just call it `send` instead of `sendCanFrame`.
 The signature tells the user that this function sends a `CanFrame`.
-```cpp
-
-```
 
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
@@ -81,6 +78,24 @@ line.getLineLength();
 
 </pre></td></tr>
 </table>
+
+There is one exception to camelCase. If you need wrapper function, e.g. to reduce the size of non-virtual-thunks, use a "_":
+
+```cpp
+// note: ESR_NOINLINE expands to __attribute__((noinline)) for most compilers
+bool ESR_NOINLINE CanTransceiver::addGlobalListener_nvt(ICanFrameListener& listener)
+{
+    // some logic
+}
+bool CanTransceiver::addGlobalListener(ICanFrameListener& listener)
+{
+    return addGlobalListener(listener);
+}
+```
+
+Here is a list of common postfixes:
+- "_nvt": Used for non-virtual-thunk wrappers.
+- tbd...
 
 
 ## Boolean Functions
