@@ -9,7 +9,7 @@
 * [Null](#null)
 
 
-## Const Corectness
+## Const Correctness
 Const should be used wherever possible. It makes an interfaces easier to use and offers potential for optimization to the compiler.
 
 ## Includes
