@@ -214,13 +214,16 @@ class ShutdownManager {
 </pre></td></tr>
 </table>
 
-In the bad example, VoiceCall itself implements ButtonPressListener, thereby publishing the onButtonPress method to everyone else, though no one will actually need it - make it a private class instead! In addition to that, the ShutdownManager on the left depends on the whole VoiceCall, which means that someone changing VoiceCall will actually need to inspect the manager class and changing the manager class might require thinking about which methods to call of VoiceCall. It is better to create a interface that has a meaningfully grouped set of methods (in this simple case: only shutdown) and depend on that only in the manager.
+In the bad example, `VoiceCall` itself implements `ButtonPressListener`, thereby publishing the `onButtonPress` method to everyone else,
+though no one will actually need it - make it a private class instead! In addition to that, the `ShutdownManager` on the left depends on
+the whole `VoiceCall`, which means that someone changing `VoiceCall` will actually need to inspect the manager class and changing the manager
+class might require thinking about which methods to call of `VoiceCall`. It is better to create a interface that has a meaningfully grouped set
+of methods (in this simple case: only shutdown) and depend on that only in the manager.
 
 The Interface Segregation Principle takes this even one step further! Though: stay reasonable always ;-)
 
 # Dependency Injection (1)
 A component should not create objects it depends on by itself, but these should be provided from the outside.
-
 Providing the objects can be done using constructor parameters (typically at least for required dependencies) or setter methods (possibly for optional ones).
 
 ## Example
