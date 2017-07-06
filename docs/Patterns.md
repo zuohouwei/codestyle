@@ -1,7 +1,8 @@
 # Table of contents
-* [#Single Responsibility Principle & Separation of Concerns](#Single Responsibility Principle & Separation of Concerns)
+* [Single Responsibility Principle and Separation of Concerns](#single_responsibility_principle_and_separation_of_concerns)
 
-# Single Responsibility Principle & Separation of Concerns
+# Single Responsibility Principle and Separation of Concerns
+
 Every class should have only a single responsibility and the
 class should be concerned only about a single aspect of that responsibility.
 That means: Rather have smaller, more focussed classes than a
@@ -12,10 +13,11 @@ single master-I-can-do-everything class.
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
 
-
+```cpp
 public class CarDoor {
     public void open() { }
 }
+
 
 public class WindowRegulator {
     public void open() { }
@@ -26,10 +28,10 @@ public class CarDoorLights {
     public void turnOn() { }
     public void turnOff() { }
 }
-
-
+```
 </pre></td><td><pre lang="cpp">
 
+```cpp
 public class CarDoor {
     public void openWindow() { }
     public void closeWindow() { }
@@ -37,6 +39,7 @@ public class CarDoor {
     public void turnOnLights() { }
     public void turnOffLights() { }
 }
+```
 
 </pre></td></tr>
 </table>
