@@ -3,15 +3,15 @@
 # Classes
 
 ## Table of contents
-* [Class Names](#class-names)
-* [Member Variable Names](#member-variable-names)
-* [Getters, Setters, Attribute Functions](#getters,-setters,-attribute-functions)
-* [Class Invariant](#class-invariant)
-* [Avoid protected data](#avoid-protected-data)
-* [Use class hierarchies to represent concepts with inherent hierarchical structure (only)](#)
-* [Ordering](#ordering)
-* [Declarations](#declarations)
-* [Templates](#templates)
+* [Class Names](Classes.md#class-names)
+* [Member Variable Names](Classes.md#member-variable-names)
+* [Getters, Setters, Attribute Functions](Classes.md#getters,-setters,-attribute-functions)
+* [Class Invariant](Classes.md#class-invariant)
+* [Avoid protected data](Classes.md#avoid-protected-data)
+* [Use class hierarchies to represent concepts with inherent hierarchical structure (only)](Classes.md#)
+* [Ordering](Classes.md#ordering)
+* [Declarations](Classes.md#declarations)
+* [Templates](Classes.md#templates)
 * [Initializer List](Formatting.md#initializer-list)
 
 ## Class Names

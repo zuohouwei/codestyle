@@ -1,10 +1,10 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Folder Structure](#folder_structure)
-* [File Names](#file_names)
-* [Header Files](#header_files)
-* [Include Guards](#include_guards)
+* [Folder Structure](Files.md#folder-structure)
+* [File Names](Files.md#file-names)
+* [Header Files](Files.md#header-files)
+* [Include Guards](Files.md#include-guards)
 
 # Folder Structure
 

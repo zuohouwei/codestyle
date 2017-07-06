@@ -1,7 +1,7 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Library Support](#library_support)
+* [Library Support](Libraries.md#library-support)
 
 ## Library Support
 [P.3](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p3-express-intent) A programmer should be familiar with

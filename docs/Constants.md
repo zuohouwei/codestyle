@@ -1,7 +1,7 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Constants](#constants)
+* [Constants](Constants.md#constants)
 
 # Constants
 Constants including `enum` values are written all UPPER_CASE with underscore
