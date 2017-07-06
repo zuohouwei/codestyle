@@ -3,9 +3,9 @@
 # Table of contents
 * [Single Responsibility Principle and Separation of Concerns](Patterns.md#single-responsibility-principle-and-separation-of-concerns)
 * [Favor composition over inheritance](Patterns.md#favor-composition-over-inheritance)
-* [Automated tests, tests, tests](Patterns.md#automated-tests,-tests,-tests)
+* [Automated tests, tests, tests](Patterns.md#automated-tests-tests-tests)
 * [Minimize public member dependencies](Patterns.md#minimize-public-member-dependencies)
-* [Dependency Injection (1)](Patterns.md#dependency-injection-(1))
+* [Dependency Injection (1)](Patterns.md#dependency-injection-1)
 
 # Single Responsibility Principle and Separation of Concerns
 
@@ -131,32 +131,22 @@ Additionally, the code gets more *flexible*, since we can e.g. apply a *Decorato
 All developed software must be enriched by fully automated tests. This is crucial for ensuring that we provide high-quality
 software over the full lifetime of a project! In general, the earlier a bug is found, the less overhead it is to fix it and
 the fewer money it costs therefore. Releases are not stressful anymore!
+
 **Automated tests** are executed automatically on a regular basis (preferably before/after each commit; or nightly)
 by Continuous Integration (http://jenkins/).
+
 **Manual tests** are tests which are (setup and) executed manually on demand.
 There should be no manual tests required for any project (with a few exceptions, though IMHO none of those are matching projects at E.S.R.Labs).
 
 ## Why automated?
 
-<table>
-<tr><th>
-
 - Software in the repository is in releasable state always
 - Return test results quickly
 - Fully reproducible test results
 - Required for volatile teams (people joining/leaving)
-
-
-</th>
-<th>
-
 - test-fix-test-fix-test-fix-...
 - Correctness of features the engineer does not know about
 - Easily test against multiple versions of another software
-
-
-</th></tr>
-</table>
 
 ## Notes
 
