@@ -112,12 +112,13 @@ class SecurityCarDoor extends CarDoor {
 
 </pre></td></tr>
 </table>
+
 In this example, there is a strong dependency of the subclass `SecurityCarDoor` on how the parent class `CarDoor` works internally.
 It is obvious that e.g. CarDoor is harder to adjust. Imagine a case where we have more layers and more classes… 
 
 You could also think of the above solution as adhering to the SRP (principle “open” is different from “security”, see episode 1).
 Note that *favoring* composition does not mean that you should *never* use inheritance. Find a meaningful solution together!
 
-##Why?
+## Why?
 Again: Easier to *understand*, easier to *adjust*, easier to *test* (mock CarDoor!). 
 Additionally, the code gets more *flexible*, since we can e.g. apply a *Decorator* pattern more easily (as we did in the example, `SecurityCarDoor` is a Decorator).
