@@ -1,8 +1,8 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Single Responsibility Principle and Separation of Concerns](Patterns.md#single_responsibility_principle_and_separation_of_concerns)
-* [Favor composition over inheritance](Patterns.md#favor_composition_over_inheritance)
+* [Single Responsibility Principle and Separation of Concerns](Patterns.md#single-responsibility-principle-and-separation-of-concerns)
+* [Favor composition over inheritance](Patterns.md#favor-composition-over-inheritance)
 
 # Single Responsibility Principle and Separation of Concerns
 
