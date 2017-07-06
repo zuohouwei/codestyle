@@ -161,5 +161,116 @@ There should be no manual tests required for any project (with a few exceptions,
 If any test fails, this has to be fixed immediately, favourably by the one who broke it. It is high(est) priority of the team to keep the test CI job green. Otherwise no one else in the team can reliably continue to work or will receive test errors late.
 
 # Minimize public member dependencies
+The number of public members of classes should be minimal. Public members for interfaces should be grouped reasonably and each group should be minimal.
+Each public member creates a logical dependency from the one referencing an object to the one providing it. It is obvious that the smaller the amount of dependencies between components, the easier it is to change (and improve) code. 
+Each component should reference only objects of such types that provide a reasonable superset of methods required by that component.
+
+## Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+```cpp
+interface Shutdownable {
+  public void shutdown();
+}
+
+class VoiceCall implements Shutdownable {
+  ButtonPressListener pressListener = ..;   
+  public void dial(String number) { }
+  @Override    
+  public void shutdown() { }
+}
+
+class ShutdownManager {
+  private List<Shutdownable> shutdown=..;
+  public void executeEcuShutdown() {
+    shutdownables.forEach(/* .... */);
+  }
+}
+```
+</pre></td><td><pre lang="cpp">
+
+```cpp
+class VoiceCall
+  implements ButtonPressListener {
+
+  @Override
+  public void onButtonPress(){/*hangup*/}
+   
+  public void dial(String number) { }
+  public void shutdown() { }
+}
+
+class ShutdownManager {
+    private VoiceCall voiceCall;
+   
+    public void executeEcuShutdown() {
+        voiceCall.shutdown();
+    }
+}
+```
+
+</pre></td></tr>
+</table>
+
+In the bad example, VoiceCall itself implements ButtonPressListener, thereby publishing the onButtonPress method to everyone else, though no one will actually need it - make it a private class instead! In addition to that, the ShutdownManager on the left depends on the whole VoiceCall, which means that someone changing VoiceCall will actually need to inspect the manager class and changing the manager class might require thinking about which methods to call of VoiceCall. It is better to create a interface that has a meaningfully grouped set of methods (in this simple case: only shutdown) and depend on that only in the manager.
+
+The Interface Segregation Principle takes this even one step further! Though: stay reasonable always ;-)
 
 # Dependency Injection (1)
+A component should not create objects it depends on by itself, but these should be provided from the outside.
+
+Providing the objects can be done using constructor parameters (typically at least for required dependencies) or setter methods (possibly for optional ones).
+
+## Example
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+```cpp
+class ServiceAImpl implements ServiceA {
+  public ServiceAImpl(ServiceB b) {
+    serviceB = b;
+  }
+   
+  // or (setter injection):
+  public ServiceAImpl() { }
+  public void setServiceB(ServiceB b) {
+    serviceB = b;
+  }
+}
+
+interface ServiceB { /* ... */ }
+```
+</pre></td><td><pre lang="cpp">
+
+```cpp
+class ServiceA {
+  private ServiceB serviceB;
+  public ServiceA() {
+    serviceB = new ServiceB();
+  }
+   
+  // or (static lookup):
+  public ServiceA() {
+    serviceB = StaticAccess.findServiceB();
+  }
+}
+
+class ServiceB{ /* ... */ }
+```
+
+</pre></td></tr>
+</table>
+
+By using methods like displayed on the left side (instantiate yourself, find by some static provider, ...),
+`ServiceA` is easily coupled to class `ServiceB` too tightly. In the approach on the right side, each Service is an interface and `ServiceAImpl`
+depends only on the generic interface of `ServiceB`, not on a concrete implementation. This allows easy substitution of the implementation -
+think e.g. of a Service that needs to persistently store some byte array; it should not care if a StorageService stores on local disk, remote disk,
+or only in main memory for tests. In addition the dependency of `ServiceAImpl` to some `ServiceB` is directly visible (at least for the constructor injection).
+
+Some classes obviously have to instantiate objects though, for example data objects after reading them e.g. from disk. These objects should though only be
+created by Factory classes, which again have an interface and are injected.
+The classes which need injection should be instantiated favorably in a single place, with that single component resolving all the dependencies and creating
+the objects in the right order. Watch out for the next episode of CCotT for more discussion on this!
