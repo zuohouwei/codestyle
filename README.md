@@ -10,4 +10,5 @@ Code style is a matter of personal taste and discussions about it tend to become
 * [Testing](docs/Testing.md)
 * [Documentation](docs/Documentation.md)
 * [Libraries](docs/Libraries.md)
+* [Patterns](docs/Patterns.md)
 
