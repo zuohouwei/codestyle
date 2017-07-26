@@ -1,7 +1,7 @@
 [Main Page](../README.md)
 
 # Table of contents
-* [Const Corectness](#const-corectness)
+* [Const Correctness](#const-correctness)
 * [Includes](#includes)
 * [Functions](#functions)
 * [Comments](#comments)
@@ -11,6 +11,20 @@
 
 ## Const Correctness
 Const should be used wherever possible. It makes an interfaces easier to use and offers potential for optimization to the compiler.
+
+We use the following style:
+<table>
+<tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
+<tr><td><pre lang="cpp">
+
+const uint16_t a;
+
+</pre></td><td><pre lang="cpp">
+
+uint16_t const a;
+
+</pre></td></tr>
+</table>
 
 ## Includes
 
