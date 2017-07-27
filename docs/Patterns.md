@@ -249,9 +249,7 @@ class ServiceAImpl implements ServiceA {
 
 interface ServiceB { /* ... */ }
 ```
-</pre></td><td><pre lang="cpp">
-
-Assume ServiceAImpl depends on ServiceB
+</pre></td><td>Assume ServiceAImpl depends on ServiceB<pre lang="cpp">
 
 ```cpp
 class ServiceA {
