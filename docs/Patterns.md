@@ -289,6 +289,8 @@ Example: Assume there’s a constant-to-int mapping that needs to be shared betw
 Create a single file specifying the mapping and generate code for both parts out of it!
 
 ## Dependency Injection Example
+Assume `ServiceAImpl` depends on ServiceB:
+
 <table>
 <tr><th width="400px">Good</th><th width="400px">Bad</th></tr>
 <tr><td><pre lang="cpp">
@@ -306,11 +308,7 @@ class DiContainer {
   }
 }
 ```
-</pre></td><td>
-
-Assume `ServiceAImpl` depends on ServiceB
-
-<pre lang="cpp">
+</pre></td><td><pre lang="cpp">
 
 ```cpp
 class DiContainer {
