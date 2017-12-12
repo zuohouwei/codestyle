@@ -8,6 +8,7 @@
 * [Dependency Injection (1)](Patterns.md#dependency-injection-1)
 * [Dependency Injection (2)](Patterns.md#dependency-injection-2)
 * [The single responsibility principle](Responsibility.md)
+* [The Open Closed principle](patterns/OpenClosed.md)
 
 # Single Responsibility Principle and Separation of Concerns
 
