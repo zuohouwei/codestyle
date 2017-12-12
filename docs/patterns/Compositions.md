@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Favor composition over inheritance
 Software architecture should prefer classes that are composed out of various other classes than classes which have a deep type inheritance structure.
 As soon as classes have about >= 3 layers of inheritance, it becomes difficult to adjust any layer because they are strongly coupled to each other.

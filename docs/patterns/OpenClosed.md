@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # The Open Closed principle
 *All systems change during their lifetimes.*
 

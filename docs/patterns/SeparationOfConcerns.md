@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Single Responsibility Principle and Separation of Concerns
 
 Every class should have only a single responsibility and the

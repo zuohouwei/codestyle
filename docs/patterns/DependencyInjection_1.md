@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Dependency Injection (1)
 A component should not create objects it depends on by itself, but these should be provided from the outside.
 Providing the objects can be done using constructor parameters (typically at least for required dependencies) or setter methods (possibly for

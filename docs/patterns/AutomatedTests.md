@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Automated tests, tests, tests
 All developed software must be enriched by fully automated tests. This is crucial for ensuring that we provide high-quality
 software over the full lifetime of a project! In general, the earlier a bug is found, the less overhead it is to fix it and

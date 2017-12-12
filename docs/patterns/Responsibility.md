@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # The single responsibility principle
 
 This is the first episode of the series on the SOLID Object Oriented Design principles promoted by Uncle Bob (Robert C. Martin). 

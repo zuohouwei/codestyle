@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Dependency Injection (2)
 There must only be a single source of truth.
 

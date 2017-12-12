@@ -1,3 +1,5 @@
+[Patterns](../Patterns.md)
+
 # Minimize public member dependencies
 The number of public members of classes should be minimal. Public members for interfaces should be grouped reasonably and each group should be minimal.
 Each public member creates a logical dependency from the one referencing an object to the one providing it. It is obvious that the smaller the amount of dependencies between components, the easier it is to change (and improve) code. 
