@@ -9,4 +9,5 @@
 * [Dependency Injection (2)](patterns/DependencyInjection_2.md)
 * [The single responsibility principle](patterns/Responsibility.md)
 * [The Open Closed principle](patterns/OpenClosed.md)
+* [The Liskov Substitution principle](patterns/LiskovSubstitution.md)
 
