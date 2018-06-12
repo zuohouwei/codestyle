@@ -12,7 +12,7 @@ and off a Lamp. The button class will depend on the *Lamp* class.
 
 Example:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Example Dependency Inversion")
+![alt text](https://github.com/esrlabs/codestyle/blob/master/docs/patterns/DependencyInversion.png "Example Dependency Inversion")
 
 In the good example dependencies are inverted, both Button and Lamp depend on abstract interfaces and can function with new classes. Dependency arrows
 point up. A physical button can be changed to a software button and the Lamp can be changed to a Motor. As long as classes talk to abstract interfaces,
