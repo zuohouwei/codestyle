@@ -1,5 +1,5 @@
-# E.S.R.Labs C++ Code Style
-Code style is a matter of personal taste and discussions about it tend to become emotional. In order to prevent religious wars, we define an E.S.R.Labs set of style rules.
+# ESR Labs C++ Code Style
+Code style is a matter of personal taste and discussions about it tend to become emotional. In order to prevent religious wars, we define an ESR Labs set of style rules.
 
 ## Table of Contents
 * [General](docs/General.md)
@@ -12,3 +12,8 @@ Code style is a matter of personal taste and discussions about it tend to become
 * [Libraries](docs/Libraries.md)
 * [Patterns](docs/Patterns.md)
 
+## Version Information
+
+Version | Remark | Author
+--- | --- | ---
+V. 1.4 | pattern added | J. Blanckenstein

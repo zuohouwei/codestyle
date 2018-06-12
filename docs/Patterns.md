@@ -11,3 +11,4 @@
 * [The Open Closed principle](patterns/OpenClosed.md)
 * [The Liskov Substitution principle](patterns/LiskovSubstitution.md)
 * [The Interface Segregation principle](patterns/InterfaceSegregationPrinciple.md)
+* [The Dependency Inversion principle](patterns/DependencyInversion.md)

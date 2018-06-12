@@ -9,7 +9,7 @@ the fewer money it costs therefore. Releases are not stressful anymore!
 by Continuous Integration (http://jenkins/).
 
 **Manual tests** are tests which are (setup and) executed manually on demand.
-There should be no manual tests required for any project (with a few exceptions, though IMHO none of those are matching projects at E.S.R.Labs).
+There should be no manual tests required for any project (with a few exceptions, though IMHO none of those are matching projects at ESR Labs).
 
 ## Why automated?
 
