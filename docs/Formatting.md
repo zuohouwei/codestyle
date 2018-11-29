@@ -105,10 +105,7 @@ PortSync::sendAnnounceMessage()
 </table>
 
 ## Line Wrapping
-Each line of text in your code should be at most 120 characters long.
-
-### Rational
-At most 80 characters was used by old retarded people.
+Each line of text in your code should be at most 100 characters long.
 
 ## Control Statements
 
